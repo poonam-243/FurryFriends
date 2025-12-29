@@ -168,11 +168,11 @@ function Pet_donation() {
         <label
           onDragOver={(e) => e.preventDefault()}
           onDrop={handleImageDrop}
-          className="border-2 border-dashed border-[#D1A45A] bg-[#FAEDC8] rounded-2xl p-6 text-center text-[#6B3F20] cursor-pointer"
+      
         >
-          Drag & drop photos here  
-          <br />
-          <span className="text-sm text-[#7A5331]">(or click to upload)</span>
+    
+
+          <span className="text-sm text-[#7A5331] border-2 border-dashed rounded-2xl p-2 text-center cursor-pointer">(or click to upload)</span>
 
           <input type="file" multiple className="hidden" onChange={handleImageSelect} />
         </label>
