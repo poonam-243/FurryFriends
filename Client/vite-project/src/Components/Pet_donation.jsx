@@ -29,12 +29,39 @@ function Pet_donation() {
 
 
         {/* Pet Type Buttons */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-          <button className="typeBtn activeType">Dog</button>
-          <button className="typeBtn">Cat</button>
-          <button className="typeBtn">Rabbit</button>
-          <button className="typeBtn">Bird</button>
-        </div>
+       <div className="flex flex-col mb-3">
+  <label className="text-[#6B3F20] font-semibold mb-1">
+    What kind of pet are you rehoming?
+  </label>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+
+    {/* Dog */}
+    <label className="typeRadioBox">
+      <input type="radio" name="petType" value="Dog" className="accent-[#8B5E34]" />
+      <span>Dog</span>
+    </label>
+
+    {/* Cat */}
+    <label className="typeRadioBox">
+      <input type="radio" name="petType" value="Cat" className="accent-[#8B5E34]" />
+      <span>Cat</span>
+    </label>
+
+    {/* Rabbit */}
+    <label className="typeRadioBox">
+      <input type="radio" name="petType" value="Rabbit" className="accent-[#8B5E34]" />
+      <span>Rabbit</span>
+    </label>
+
+    {/* Bird */}
+    <label className="typeRadioBox">
+      <input type="radio" name="petType" value="Bird" className="accent-[#8B5E34]" />
+      <span>Bird</span>
+    </label>
+
+  </div>
+</div>
 
 
         {/* Fields Grid */}
@@ -109,20 +136,10 @@ function Pet_donation() {
 </div>
 
         {/* Health Section */}
-        <h2 className="text-xl font-semibold text-[#6B3F20] mt-6 mb-2">
-          Health & Personality
-        </h2>
-
-        <div className="flex flex-wrap gap-3 mb-3">
-          <span className="pill">Vaccinated</span>
-          <span className="pill">Neutered / Spayed</span>
-          <span className="pill">Microchipped</span>
-          <span className="pill">Good with Kids</span>
-        </div>
-
+        <div className='text-xl font-semibold text-[#6B3F20] mt-6 mb-2'>Describe Your Pet </div>
         <textarea
           className="field"
-          rows="3"
+          rows="3" 
           placeholder="Describe your pet's behavior and habits..."
         ></textarea>
 
