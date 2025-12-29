@@ -23,20 +23,16 @@ function Pet_donation() {
 
       {/* Header Section */}
       <div className="w-full max-w-4xl">
-        <h1 className="text-3xl font-bold text-[#6B3F20]">Rehome a Pet</h1>
-        <p className="text-[#7A5331] mt-1">
+        <h1 className="text-3xl font-bold text-[#6B3F20]">Donate Your Pet</h1>
+        <p className="text-[#7A5331] mt-1 mb-1">
           Help us find a loving new family for your pet. Fill the details below.
         </p>
 
-        {/* Step Bar */}
-        <div className="mt-4 h-2 w-full bg-[#E0BF7E] rounded-full">
-          <div className="h-2 w-1/4 bg-[#8B5E34] rounded-full"></div>
-        </div>
       </div>
 
 
       {/* Form Card */}
-      <div className="w-full max-w-4xl bg-[#FFF3D2] mt-6 p-6 rounded-2xl shadow-lg border border-[#D1A45A]">
+      <div className="w-full max-w-4xl bg-[#FFF3D2] mt-4 p-6 rounded-2xl shadow-lg border border-[#D1A45A]">
 
         {/* Section Title */}
         <h2 className="text-xl font-semibold text-[#6B3F20] mb-3">
@@ -191,16 +187,37 @@ function Pet_donation() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input className="field" placeholder="Full Name" />
-          <input className="field" placeholder="Email Address" />
-          <input className="field" placeholder="Phone Number" />
-          <input className="field" placeholder="City / Location" />
+
+          <div className="flex flex-col">
+       <label className="text-[#6B3F20] font-medium mb-1">Doner Name</label>
+          <input className="field" placeholder="Enter donor name" />
+        </div>
+
+          <div className="flex flex-col">
+            <label className="text-[#6B3F20] font-medium mb-1">Email Address</label>
+            <input className="field" placeholder="Enter email address" />
+          </div>
+
+          <div className="flex flex-col">
+            <label className="text-[#6B3F20] font-medium mb-1">Phone Number</label>
+            <input className="field" placeholder="Enter phone number" />
+          </div>
+
+          <div className="flex flex-col">
+            <label className="text-[#6B3F20] font-medium mb-1">City / Location</label>
+            <input className="field" placeholder="Enter city or location" />
+          </div>
+
         </div>
 
 
         {/* Button */}
-        <button className="submitBtn mt-6">
-          Submit Pet Profile →
+
+
+        <button
+           onClick={() => alert("Your donation form has been successfully submitted 🐾")}
+           className="mt-6 rounded border-2 border-[#8B5E34] bg-[#8B5E34] text-white px-6 py-2 font-semibold hover:bg-transparent hover:text-[#8B5E34] transition">
+          Submit Pet Profile
         </button>
       </div>
     </div>
