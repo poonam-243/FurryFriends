@@ -1,6 +1,22 @@
 import React from 'react'
+import { useState } from 'react';
 
 function Pet_donation() {
+  const [images, setImages] = useState([]);
+
+  const handleImageDrop = (e) => {
+    e.preventDefault();
+    const files = [...e.dataTransfer.files];
+    const preview = files.map(file => URL.createObjectURL(file));
+    setImages(prev => [...prev, ...preview]);
+  };
+
+  const handleImageSelect = (e) => {
+    const files = [...e.target.files];
+    const preview = files.map(file => URL.createObjectURL(file));
+    setImages(prev => [...prev, ...preview]);
+  };
+
   return (
     <>
        <div className="min-h-screen bg-[#F4E1A1] flex flex-col items-center py-10 px-4">
@@ -149,13 +165,24 @@ function Pet_donation() {
           Photos
         </h2>
 
-        <div className="border-2 border-dashed border-[#D1A45A] bg-[#FAEDC8] rounded-2xl p-6 text-center text-[#6B3F20]">
-          Drag & drop photos here
+        <label
+          onDragOver={(e) => e.preventDefault()}
+          onDrop={handleImageDrop}
+          className="border-2 border-dashed border-[#D1A45A] bg-[#FAEDC8] rounded-2xl p-6 text-center text-[#6B3F20] cursor-pointer"
+        >
+          Drag & drop photos here  
           <br />
-          <span className="text-sm text-[#7A5331]">
-            (UI only – no upload logic)
-          </span>
-        </div>
+          <span className="text-sm text-[#7A5331]">(or click to upload)</span>
+
+          <input type="file" multiple className="hidden" onChange={handleImageSelect} />
+        </label>
+
+        {/* Preview */}
+        <div className="flex gap-3 mt-3 flex-wrap">
+          {images.map((img, i) => (
+            <img key={i} src={img} alt="pet" className="w-20 h-20 rounded-xl border object-cover" />
+          ))}
+        </div> 
 
 
         {/* Contact Info */}
