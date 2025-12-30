@@ -6,13 +6,13 @@ function Navbar() {
       <nav className="w-full bg-[#F9F7F3]">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         
-        {/* Logo */}
+        
         <div className="flex items-center gap-2">
           <span className="text-orange-500 text-2xl">🐾</span>
           <h1 className="text-xl font-semibold text-gray-800">PetHeart</h1>
         </div>
 
-        {/* Menu */}
+      
         <ul className="hidden md:flex items-center gap-8 text-gray-700">
           <li className="cursor-pointer hover:text-orange-500">Home</li>
           <li className="cursor-pointer hover:text-orange-500">Adopt</li>
@@ -22,7 +22,7 @@ function Navbar() {
           <li className="cursor-pointer text-orange-500">Help</li>
         </ul>
 
-        {/* Buttons */}
+
         <div className="flex items-center gap-4">
           <button className="bg-orange-400 hover:bg-orange-500 text-white px-5 py-2 rounded-full">
             Sign Up
