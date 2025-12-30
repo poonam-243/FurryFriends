@@ -1,5 +1,7 @@
 import React from "react";
 import { RiAccountPinCircleLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
+
 // import logo from '../assets/logo2.png';
 
 
@@ -33,7 +35,10 @@ const pets = [
 ];
 
 
+
 export default function Adopt() {
+  const navigate = useNavigate();   // ✅ ADD THIS LINE
+ {
   return (
     <>
     <div className="bg-[#F5C977] min-h-screen font-sans">
@@ -82,12 +87,19 @@ export default function Adopt() {
             {/* <button className="mt-3 bg-[#B86B2E] text-white py-2 rounded hover:bg-[#9c5622] h-[50px] ">
               Adopt Me
             </button> */}
-            <button
+            {/* <button
                 onClick={() => handleAdopt(pet)}
                 className="mt-3 bg-[#B86B2E] text-white py-2 rounded hover:bg-[#9c5622] h-[50px]"
 >
               Adopt Me
-             </button>
+             </button> */}
+             <button
+  onClick={() => navigate("/Adoptform")}
+  className="mt-3 bg-[#B86B2E] text-white py-2 rounded hover:bg-[#9c5622] h-[50px]"
+>
+  Adopt Me
+</button>
+
           </div>
         ))}
       </section>
@@ -95,4 +107,5 @@ export default function Adopt() {
     </div>
         </>
   );
+}
 }
