@@ -7,8 +7,9 @@ dotenv.config();
 const app = e();
 const PORT = 5000;
 
-app.post("/hi", (req,res)=>{
+app.post("/signup", (req,res)=>{
     res.send("hello from server");
+    
 });
 
 app.listen(PORT,()=>{
