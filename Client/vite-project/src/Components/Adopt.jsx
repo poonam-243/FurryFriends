@@ -44,12 +44,12 @@ export default function Adopt() {
         {pets.map((pet, index) => (
           <div
             key={index}
-            className="bg-[#FCE6B4] rounded-xl shadow-md w-[260px] h-[380px] mx-auto flex flex-col justify-between p-4"
+            className="bg-[#FCE6B4] rounded-xl shadow-md w-65 h-95 mx-auto flex flex-col justify-between p-4"
           >
             <img
               src={pet.img}
               alt={pet.name}
-              className="w-full h-[200px] object-cover rounded-lg"
+              className="w-full h-50 object-cover rounded-lg"
             />
 
             <div className="text-center mt-3">
@@ -59,7 +59,7 @@ export default function Adopt() {
 
             <button
               onClick={() => navigate("/adoptform")}
-              className="mt-3 bg-[#B86B2E] text-white py-2 rounded hover:bg-[#9c5622] h-[50px]"
+              className="mt-3 bg-[#B86B2E] text-white py-2 rounded hover:bg-[#9c5622] h-12.5"
             >
               Adopt Me
             </button>
