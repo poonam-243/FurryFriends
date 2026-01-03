@@ -1,9 +1,6 @@
+
 import React from "react";
-import { RiAccountPinCircleLine } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
-// import Adoptform from "../Components/Adoptform";
-
-
+import { useNavigate } from "react-router-dom";
 
 const pets = [
   { name: "Bella", weight: "3kg", img: "https://i.pinimg.com/736x/7d/fc/d9/7dfcd9ef538f746c3b89e7a9285455e3.jpg" },
@@ -58,13 +55,13 @@ export default
         {pets.map((pet, index) => (
           <div
             key={index}
-            className="bg-[#FCE6B4] rounded-xl shadow-md w-[260px] h-[380px] mx-auto flex flex-col justify-between p-4"
+            className="bg-[#FCE6B4] rounded-xl shadow-md w-65 h-95 mx-auto flex flex-col justify-between p-4"
           >
             
             <img
               src={pet.img}
               alt={pet.name}
-              className="w-full h-[200px] object-cover rounded-lg"
+              className="w-full h-50 object-cover rounded-lg"
             />
 
             
@@ -73,19 +70,12 @@ export default
               <p className="text-sm text-gray-700">{pet.weight}</p>
             </div>
 
-        
-            
-              
-              {/* <Link to="/Adoptform">    */}
-                 <button
-                        onClick={() => navigate("/Adoptform")} 
-                        className="mt-3 bg-[#B86B2E] text-white py-2 rounded hover:bg-[#9c5622] h-[50px]"
-                >
-                          Adopt Me
-                         </button>
-                        {/* //  </Link> */}
-        
-
+            <button
+              onClick={() => navigate("/adoptform")}
+              className="mt-3 bg-[#B86B2E] text-white py-2 rounded hover:bg-[#9c5622] h-12.5"
+            >
+              Adopt Me
+            </button>
           </div>
         ))}
       </section>
