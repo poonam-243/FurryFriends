@@ -11,7 +11,7 @@ app.use(cors());
 const PORT = 5000;
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MongoDB)
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
 
