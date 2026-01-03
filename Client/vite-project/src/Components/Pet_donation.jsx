@@ -34,7 +34,7 @@ const handleSubmit = async () => {
     });
 
     const data = await res.json();
-    alert("Your donation form has been successfully submitted 🐾");
+    alert("Your donation form has been successfully submitted ");
   } catch (error) {
     alert("Server error — please try again");
   }
