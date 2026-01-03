@@ -7,15 +7,16 @@ import React from 'react'
 // import Aboutsmain from './Page/Aboutsmain.jsx'
 
 
-import { BrowserRouter , Routes, Route } from 'react-router-dom'
-import Adopt from './Components/Adopt.jsx'
-import Adoptform from './Components/Adoptform.jsx'
-import Navbar from './Components/Navbar.jsx'
-import Signup from './Components/Signup.jsx'
-import Login from './Components/Login.jsx'
+// import { BrowserRouter , Routes, Route } from 'react-router-dom'
+// import Adopt from './Components/Adopt.jsx'
+// import Adoptform from './Components/Adoptform.jsx'
+// import Navbar from './Components/Navbar.jsx'
+// import Signup from './Components/Signup.jsx'
+// import Login from './Components/Login.jsx'
 import Manual from './Components/Manual.jsx'
-import Footer from './Components/Footer.jsx'
+// import Footer from './Components/Footer.jsx'
 import Homemain from './Page/Homemain.jsx';
+
 
 
 function App() {
@@ -24,9 +25,10 @@ function App() {
      
 
      
-  
+   <Manual/>
+   <Homemain/>
       
-    <BrowserRouter>
+    {/* <BrowserRouter>
      <Navbar/>
       <Routes>
         <Route path="/"  element={<Homemain/>} />
@@ -37,7 +39,7 @@ function App() {
         <Route path="/adoptform" element={<Adoptform />} />
       </Routes>
       <Footer/>
-    </BrowserRouter> 
+    </BrowserRouter>  */}
      
     
    
