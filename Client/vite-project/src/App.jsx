@@ -8,12 +8,10 @@ import Signup from './Components/Signup.jsx'
 import Login from './Components/Login.jsx'
 import Manual from './Components/Manual.jsx'
 import Footer from './Components/Footer.jsx'
-
+import feedback from './Components/feedback.jsx'
 function App() {
   return (
     <>
-   
-  
        <Navbar/>
     <BrowserRouter>
       <Routes>
@@ -22,6 +20,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/adopt" element={<Adopt />} />
         <Route path="/adoptform" element={<Adoptform />} />
+        <Route path="/feedback" element={<feedback />} />
       </Routes>
      
     </BrowserRouter> 
@@ -33,5 +32,7 @@ function App() {
     </>
   )
 }
+
+
 
 export default App;
