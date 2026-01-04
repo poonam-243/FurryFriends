@@ -1,143 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-   
-  const Adoptform = () => {
-     const [Name,setname]=React.useState('');
-      const [Address,setaddress]=React.useState('');
-        const [Email,setemail]=React.useState('');
-        const [Contact,setcontactname]=React.useState('');
-        const [Petname,setpetname]=React.useState('');
 
-// const axios = require('axios');
-
-  const apicall = async()=>{
-    const connect = await axios.post("http://localhost:5000/signup",{
-      name:Name,
-      address:Address,
-      email:Email,
-      contact:Contact,
-      petName:Petname
-    });
-  
-   console.log()  
-  try{
-    if(code ==11000){
-
-alert("user alredy exist")
-    }
-    else{
-      alert("user created")
-    
-    }
-
-  }
-  catch(err){
-    alert(err)
-
-  }
-  }
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-[#f4c96a]">
-      
-      <div className="relative bg-[#f7ecd2] w-[420px] p-6 rounded-xl 
-                      border-[3px] ">
-
-        
-        <h2 className="text-center text-xl font-bold mb-5">
-          Adopt your pet
-        </h2>
-        <div className="flex items-center gap-3 mb-3">
-          <label className="w-[90px] text-sm font-semibold">Name:</label>
-          <input
-            type="text"
-            placeholder="Fullname"
-            className="flex-1 px-3 py-1 border-2 border-black rounded-md bg-[#fff6df]"
-          />
-        </div>
-        <div className="flex items-center gap-3 mb-3">
-          <label className="w-[90px] text-sm font-semibold">Address::</label>
-          <input
-            type="text"
-            placeholder=""
-            className="flex-1 px-3 py-1 border-2 border-black rounded-md bg-[#fff6df]"
-          />
-        </div>
-
-        <div className="flex items-center gap-3 mb-3">
-          <label className="w-[90px] text-sm font-semibold">Contact.No:</label>
-          <input
-            type="text"
-            placeholder=""
-            className="flex-1 px-3 py-1 border-2 border-black rounded-md bg-[#fff6df]"
-          />
-        </div>
-    
-        <div className="flex items-start gap-3 mb-5">
-          <label className="w-[90px] text-sm font-semibold mt-1">
-            Pet name:
-          </label>
-          <div className="relative flex-1">
 export default function Adoptform() {
+  const [Name, setName] = useState("");
+  const [Address, setAddress] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Contact, setContact] = useState("");
+  const [Petname, setPetname] = useState("");
+
+  const apicall = async () => {
+    try {
+      const res = await axios.post("http://localhost:5000/signup", {
+        name: Name,
+        address: Address,
+        email: Email,
+        contact: Contact,
+        petName: Petname,
+      });
+
+      alert("User created successfully");
+      console.log(res.data);
+    } catch (err) {
+      if (err.response?.data?.code === 11000) {
+        alert("User already exists");
+      } else {
+        alert("Something went wrong");
+        console.log(err);
+      }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-[#F5C977] flex items-center justify-center">
-      <div className="bg-[#FCE6A6] w-109 p-6 rounded-xl border-2 border-gray-400 ">
-        <h2 className="text-center text-xl font-bold mb-6">
-          Adopt your pet
-        </h2>
+    <div className="min-h-screen flex items-center justify-center bg-[#F5C977]">
+      <div className="bg-[#FCE6A6] w-[420px] p-6 rounded-xl border-2 border-gray-400">
+        <h2 className="text-center text-xl font-bold mb-6">Adopt your pet</h2>
 
         <div className="space-y-4">
-          <div className="flex flex-col gap-1">
-            <label className="w-2.15">Name:</label>
-            <input
-              type="text"
-              placeholder="Fullname"
-              className="border rounded-md w-full px-3 py-1"
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={Name}
+            onChange={(e) => setName(e.target.value)}
+            className="border w-full px-3 py-1 rounded-md"
+          />
 
-          <div className="flex flex-col gap-1">
-            <label className="w-2.15">Address:</label>
-            <input
-              type="text"
-               placeholder="Enter your address"
-              className="border rounded-md w-full px-3 py-1"
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Address"
+            value={Address}
+            onChange={(e) => setAddress(e.target.value)}
+            className="border w-full px-3 py-1 rounded-md"
+          />
 
-          <div className="flex flex-col gap-1">
-            <label className="w-2.15">Contact.No:</label>
-            <input
-              type="text"
-               placeholder="Enter your contact number"
-              className="border rounded-md w-full px-3 py-1"
-            />
-          </div>
+          <input
+            type="email"
+            placeholder="Email"
+            value={Email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="border w-full px-3 py-1 rounded-md"
+          />
 
-          <div className="flex flex-col gap-1">
-            <label className="w-2.15">Pet name:</label>
-            <textarea
-              rows="2"
-              className="flex-1 px-13 py-1 border-2 border-black rounded-md bg-[#fff6df]"
-            ></textarea>    
-          </div>
+          <input
+            type="text"
+            placeholder="Contact Number"
+            value={Contact}
+            onChange={(e) => setContact(e.target.value)}
+            className="border w-full px-3 py-1 rounded-md"
+          />
+
+          <textarea
+            placeholder="Pet Name"
+            value={Petname}
+            onChange={(e) => setPetname(e.target.value)}
+            className="border w-full px-3 py-1 rounded-md"
+          ></textarea>
         </div>
 
-        {/* Button */}
         <button
-         onClick={apicall}
-          className="block mx-auto bg-[#d48b3c] px-6 py-1 
-                     border-2 border-black rounded-md 
-                     font-semibold shadow-[2px_2px_0px_#000]
-                     hover:bg-[#c57c2e]"
-        >g
-        <button className="mt-6 bg-[#835d36] px-6 py-2 rounded-md mx-auto block">
-          Adopted
+          onClick={apicall}
+          className="mt-6 bg-[#835d36] px-6 py-2 rounded-md text-white mx-auto block"
+        >
+          Adopt
         </button>
-
-      
       </div>
     </div>
   );
-};
-
-export default Adoptform;
+}
