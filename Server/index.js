@@ -3,12 +3,12 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import users from './Models/adoptuser.js';
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config(); 
 
 
 
 const app = e();
-const PORT = 1234;
+const PORT = 5000;
 
 app.use(cors());
 app.use(e.json());

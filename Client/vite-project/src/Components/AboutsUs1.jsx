@@ -12,7 +12,7 @@ function AboutsUs1() {
               About <span className="text-[#522c22]"> Paws Hope.</span>
             </h1>
             <p className="mt-4 text-lg opacity-80 text-[#66483e] ml-[50px]">
-              Paws and Pet is a compassionate platform dedicated to connecting loving homes with pets who deserve care, safety, and happiness. We believe every animal deserves a second chance, whether through adoption, support, or responsible donation. Our mission is to spread awareness, encourage kindness, and make pet adoption simple and joyful. Along with helping pets find forever homes, we also offer quality pet products and services to support their well-being. At Paws and Pet, we’re not just a website—we’re a community that believes love, care, and compassion can change lives, one paw at a time.
+              FurryFriends is a compassionate platform dedicated to connecting loving homes with pets who deserve care, safety, and happiness. We believe every animal deserves a second chance, whether through adoption, support, or responsible donation. Our mission is to spread awareness, encourage kindness, and make pet adoption simple and joyful. Along with helping pets find forever homes, we also offer quality pet products and services to support their well-being. At Paws and Pet, we’re not just a website—we’re a community that believes love, care, and compassion can change lives, one paw at a time.
             </p>
           </div>
 
